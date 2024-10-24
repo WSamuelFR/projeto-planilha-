@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliar Modelo</title>
+    <title>KNN Classificação de Filmes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -59,6 +59,37 @@
             padding: 20px;
             margin-top: 20px;
         }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -69,7 +100,7 @@
             <h1>Avaliar Modelo</h1>
             <nav>
                 <ul>
-                <li><a href="view_menu.php">Home</a></li>
+                    <li><a href="view_menu.php">Home</a></li>
                     <li><a href="executar_modelo.php">Executar Modelo</a></li>
                     <li><a href="avaliar_modelo.php">Avaliar Modelo</a></li>
                     <li><a href="arvore_decisao.php">Avaliação de Filmes</a></li>
@@ -84,17 +115,42 @@
     <div class="container">
         <article>
             <div class="container">
-                <h1>Avaliação de Filmes</h1>
+                <h1>Classificação de Filmes com KNN</h1>
                 <p>
-                    o código classifica se a avaliação de um filme será alta ou baixa, com base no tempo de exibição,
-                    utilizando uma árvore de decisão construída a partir dos dados de filmes no arquivo CSV
+                    Calcular Distância: Usa a fórmula da distância euclidiana para calcular a distância entre dois
+                    pontos.
+                    KNN: Implementa o algoritmo KNN, calculando distâncias, ordenando os pontos mais próximos, e
+                    determinando a classe majoritária com base nos K vizinhos mais próximos.
+                    Teste: Classifica um ponto novo com base nos dados existentes e exibe a classe prevista.
                 </p>
-                <form action="classify.php" method="post">
-                    <label for="tempo_exibicao">Tempo de Exibição (minutos):</label>
-                    <input type="number" id="tempo_exibicao" name="tempo_exibicao" required>
+                <form action="knn_classificacao.php" method="POST">
+                    <div class="form-group">
+                        <label for="tempo_exibicao">Tempo de Exibição (minutos):</label>
+                        <input type="number" id="tempo_exibicao" name="tempo_exibicao" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="k">Número de Vizinhos (K):</label>
+                        <input type="number" id="k" name="k" value="3" required>
+                    </div>
                     <button type="submit">Classificar</button>
                 </form>
+
+                <div class="result">
+                    <?php
+                    if (isset($_GET['resultado'])) {
+                        echo "<h2>Resultado da Classificação</h2>";
+                        echo "<h2>A avaliação prevista para o novo ponto é: <strong>{$_GET['resultado']}</strong></h2>";
+                    }
+
+                    if (isset($_GET['erro'])) {
+                        echo "<h2>Erro</h2>";
+                        echo "<h2><strong>{$_GET['erro']}</strong></h2>";
+                    }
+                    ?>
+                </div>
             </div>
+
+
         </article>
     </div>
 

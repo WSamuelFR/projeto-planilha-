@@ -109,11 +109,12 @@ $precisao = round(AvaliarPrecisao(), 2);
             <h1>Avaliar Modelo</h1>
             <nav>
                 <ul>
-                    <li><a href="view_menu.php">Home</a></li>
+                <li><a href="view_menu.php">Home</a></li>
                     <li><a href="executar_modelo.php">Executar Modelo</a></li>
                     <li><a href="avaliar_modelo.php">Avaliar Modelo</a></li>
                     <li><a href="arvore_decisao.php">Avaliação de Filmes</a></li>
-                    <li><a href="view_graficos.php">Menu graficos</a></li>
+                    <li><a href="knn_form.php">Classificação de Filmes com KNN</a></li>
+                    <li><a href="view_graficos.php">Menu graficos</a></li><br><br>
                     <li><a href="view_basedados.php">Base de dados</a></li>
                 </ul>
             </nav>
