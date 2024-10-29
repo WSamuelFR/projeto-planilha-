@@ -1,26 +1,26 @@
 <?php
 function simple_titleME()
 {
-    $filename = 'summer_movies.csv'; // Substitua pelo nome do seu arquivo CSV
-    // define o numero de linhas 
+    $filename = 'summer_movies.csv'; 
+    
     $numero_da_linha = 100;
-    // define o numero de linhas
+    
     $linha_atual = 0;
 
     if (($handle = fopen($filename, 'r')) !== FALSE) {
-        $header = fgetcsv($handle); // Lê o cabeçalho do arquivo CSV
+        $header = fgetcsv($handle);
 
-        // Encontra o índice do cabeçalho de avaliação
+        
         $indexTempo_exibicao = array_search('runtime_minutes', $header);
         $simple_title = array_search('simple_title', $header);
 
-        // Array para armazenar as linhas filtradas
+        
         $filteredRows = [];
 
         while (($data = fgetcsv($handle)) !== FALSE && $linha_atual < $numero_da_linha) {
-            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; // Obtém a avaliação da coluna apropriada
+            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; 
 
-            if ($Tempo_exibicao < 100) { // Ajuste a condição conforme necessário
+            if ($Tempo_exibicao < 100) { 
                 $filteredRows[] = $data[$simple_title];
             }
             $linha_atual++;
@@ -28,7 +28,7 @@ function simple_titleME()
 
         fclose($handle);
 
-        // Exibe as linhas filtradas
+        
         return ($filteredRows);
 
     }
@@ -37,26 +37,26 @@ function simple_titleME()
 
 function runtime_minutesME()
 {
-    $filename = 'summer_movies.csv'; // Substitua pelo nome do seu arquivo CSV
-    // define o numero de linhas 
+    $filename = 'summer_movies.csv'; 
+    
     $numero_da_linha = 100;
-    // define o numero de linhas
+    
     $linha_atual = 0;
 
     if (($handle = fopen($filename, 'r')) !== FALSE) {
-        $header = fgetcsv($handle); // Lê o cabeçalho do arquivo CSV
+        $header = fgetcsv($handle); 
 
-        // Encontra o índice do cabeçalho de avaliação
+        
         $indexTempo_exibicao = array_search('runtime_minutes', $header);
         $runtime_minutes = array_search('runtime_minutes', $header);
 
-        // Array para armazenar as linhas filtradas
+        
         $filteredRows = [];
 
         while (($data = fgetcsv($handle)) !== FALSE && $linha_atual < $numero_da_linha) {
-            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; // Obtém a avaliação da coluna apropriada
+            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; 
 
-            if ($Tempo_exibicao < 100) { // Ajuste a condição conforme necessário
+            if ($Tempo_exibicao < 100) { 
                 $filteredRows[] = $data[$runtime_minutes];
             }
             $linha_atual++;
@@ -64,7 +64,7 @@ function runtime_minutesME()
 
         fclose($handle);
 
-        // Exibe as linhas filtradas
+       
         return ($filteredRows);
 
     }
@@ -73,26 +73,26 @@ function runtime_minutesME()
 
 function num_votesME()
 {
-    $filename = 'summer_movies.csv'; // Substitua pelo nome do seu arquivo CSV
-    // define o numero de linhas 
+    $filename = 'summer_movies.csv'; 
+    
     $numero_da_linha = 100;
-    // define o numero de linhas
+    
     $linha_atual = 0;
 
     if (($handle = fopen($filename, 'r')) !== FALSE) {
-        $header = fgetcsv($handle); // Lê o cabeçalho do arquivo CSV
+        $header = fgetcsv($handle); 
 
-        // Encontra o índice do cabeçalho de avaliação
+        
         $indexTempo_exibicao = array_search('runtime_minutes', $header);
         $num_votes = array_search('num_votes', $header);
 
-        // Array para armazenar as linhas filtradas
+        
         $filteredRows = [];
 
         while (($data = fgetcsv($handle)) !== FALSE && $linha_atual < $numero_da_linha) {
-            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; // Obtém a avaliação da coluna apropriada
+            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; 
 
-            if ($Tempo_exibicao < 100) { // Ajuste a condição conforme necessário
+            if ($Tempo_exibicao < 100) { 
                 $filteredRows[] = $data[$num_votes];
             }
             $linha_atual++;
@@ -100,7 +100,7 @@ function num_votesME()
 
         fclose($handle);
 
-        // Exibe as linhas filtradas
+       
         return ($filteredRows);
 
     }
@@ -109,26 +109,26 @@ function num_votesME()
 
 function average_ratingME()
 {
-    $filename = 'summer_movies.csv'; // Substitua pelo nome do seu arquivo CSV
-    // define o numero de linhas 
+    $filename = 'summer_movies.csv'; 
+    
     $numero_da_linha = 100;
-    // define o numero de linhas
+    
     $linha_atual = 0;
 
     if (($handle = fopen($filename, 'r')) !== FALSE) {
-        $header = fgetcsv($handle); // Lê o cabeçalho do arquivo CSV
+        $header = fgetcsv($handle); 
 
-        // Encontra o índice do cabeçalho de avaliação
+        
         $indexTempo_exibicao = array_search('runtime_minutes', $header);
         $average_rating = array_search('average_rating', $header);
 
-        // Array para armazenar as linhas filtradas
+       
         $filteredRows = [];
 
         while (($data = fgetcsv($handle)) !== FALSE && $linha_atual < $numero_da_linha) {
-            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; // Obtém a avaliação da coluna apropriada
+            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; 
 
-            if ($Tempo_exibicao < 100) { // Ajuste a condição conforme necessário
+            if ($Tempo_exibicao < 100) { 
                 $filteredRows[] = $data[$average_rating];
             }
             $linha_atual++;
@@ -136,7 +136,7 @@ function average_ratingME()
 
         fclose($handle);
 
-        // Exibe as linhas filtradas
+        
         return ($filteredRows);
 
     }

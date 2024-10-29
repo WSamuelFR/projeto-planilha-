@@ -70,11 +70,10 @@
             <nav>
                 <ul>
                 <li><a href="view_menu.php">Home</a></li>
-                <li><a href="executar_modelo.php">Executar Modelo</a></li>
+                    <li><a href="executar_modelo.php">Executar Modelo</a></li>
                     <li><a href="arvore_decisao.php">Avaliação de Filmes</a></li>
                     <li><a href="knn_form.php">Classificação de Filmes com KNN</a></li>
-                    <li><a href="knn_model.php">Avaliação Modelo KNN</a></li><br><br>
-                    <li><a href="view_graficos.php">Menu graficos</a></li>
+                    <li><a href="view_graficos.php">Menu graficos</a></li><br><br>
                     <li><a href="view_basedados.php">Base de dados</a></li>
                 </ul>
             </nav>
@@ -89,7 +88,7 @@
                     o código classifica se a avaliação de um filme será alta ou baixa, com base no tempo de exibição,
                     utilizando uma árvore de decisão construída a partir dos dados de filmes no arquivo CSV
                 </p>
-                <form action="classify.php" method="post">
+                <form action="teste.php" method="post">
                     <label for="tempo_exibicao">Tempo de Exibição (minutos):</label>
                     <input type="number" id="tempo_exibicao" name="tempo_exibicao" required>
                     <button type="submit">Classificar</button>

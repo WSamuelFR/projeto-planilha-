@@ -1,5 +1,5 @@
 <?php
-require_once '../phplot-6.2.0/phplot.php'; // Certifique-se de que o caminho está correto
+require_once '../phplot-6.2.0/phplot.php'; 
 
 include('dataMaior.php');
 include('dataMenor.php');
@@ -10,9 +10,9 @@ $dados = isset($_POST['dados']) ? $_POST['dados'] : '';
 if ($dados == 0) {
     $data = dataMaior();
 
-    $plot = new PHPlot(1500, 700); // Define o tamanho do gráfico
+    $plot = new PHPlot(1500, 700); 
     $plot->SetImageBorderType('plain');
-    // Defina o tipo de gráfico (barras)
+    
     $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : '';
 
     switch ($tipo) {
@@ -73,9 +73,9 @@ if ($dados == 0) {
 } elseif ($dados == 1) {
     $data = dataMenor();
 
-    $plot = new PHPlot(1500, 700); // Define o tamanho do gráfico
+    $plot = new PHPlot(1500, 700); 
     $plot->SetImageBorderType('plain');
-    // Defina o tipo de gráfico (barras)
+    
     $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : '';
 
     switch ($tipo) {
