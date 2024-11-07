@@ -54,7 +54,7 @@ function runtime_minutesMA()
         $filteredRows = [];
 
         while (($data = fgetcsv($handle)) !== FALSE && $linha_atual < $numero_da_linha) {
-            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; // Obtém a avaliação da coluna apropriada
+            $Tempo_exibicao = (float) $data[$indexTempo_exibicao]; 
 
             if ($Tempo_exibicao > 100) { 
                 $filteredRows[] = $data[$runtime_minutes];

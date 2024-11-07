@@ -7,7 +7,7 @@ function processaDados(): array
     $dados = [];
 
     if (($handle = fopen($filename, 'r')) !== FALSE) {
-        fgetcsv($handle); // Ignora o cabeçalho
+        fgetcsv($handle); 
         while (($data = fgetcsv($handle)) !== FALSE) {
             $dados[] = [
                 'titulo' => $data[2],

@@ -115,17 +115,17 @@ $tree = build_tree($data);
 $tempo_exibicao = $_POST['tempo_exibicao'] ?? null;
 $result = classify(['tempo_exibicao' => $tempo_exibicao], $tree);
 
-// Calcular rótulos e previsões
+
 $labels = [];
 $predictions = [];
 
-// Ajustar limite de avaliação se necessário
+
 foreach ($data as $filme) {
-    $labels[] = $filme['avaliacao'] > 6.0 ? 1 : 0; // Aqui você pode ajustar o critério de avaliação
+    $labels[] = $filme['avaliacao'] > 6.0 ? 1 : 0; 
     $predictions[] = classify(['tempo_exibicao' => $filme['tempo_exibicao']], $tree);
 }
 
-// Calcular acurácia e precisão
+
 list($accuracy, $precision) = calcular_precisao($labels, $predictions);
 
 ?>
